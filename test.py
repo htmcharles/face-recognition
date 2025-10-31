@@ -4,7 +4,7 @@ import time
 
 # Initialize serial
 try:
-    ser = serial.Serial('COM17', 9600, timeout=1)  # Replace 'COM3' with your port
+    ser = serial.Serial('COM3', 9600, timeout=1)  # Replace 'COM3' with your port
     time.sleep(2)
 except serial.SerialException:
     print("Error: Could not open serial port.")
@@ -14,7 +14,7 @@ except serial.SerialException:
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 # Initialize video capture
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
